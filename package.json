@@ -41,7 +41,9 @@
   },
   "dependencies": {
     "autoprefixer-cli": "^1.0.0",
+    "flickity": "^2.2.0",
     "mkdirp": "^0.5.1",
+    "normalize.css": "^8.0.1",
     "nu-html-checker": "^0.1.0",
     "rimraf": "^2.6.3",
     "save-dev": "^2.0.0"
