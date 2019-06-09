@@ -5,7 +5,7 @@ Mustache.parse(templateList);
 var listItems = '';
 
 for(var i = 0; i < objects.length; i++){
-    listItems = Mustache.render(templateList, objects[i])
+    listItems += Mustache.render(templateList, objects[i])
 };
     
 var results = document.getElementById('main-carousel'); 
