@@ -17,3 +17,17 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
+
+var templateList = document.getElementById('template-cell').innerHTML;
+ 
+Mustache.parse(templateList);
+ 
+var listItems = '';
+
+for(var i = 0; i < objects.length; i++){
+    listItems = Mustache.render(templateList, objects[i])
+};
+    
+var results = document.getElementById('main-carrousel'); 
+
+results.insertAdjacentHTML('beforeend', listItems);
