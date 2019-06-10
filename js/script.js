@@ -13,7 +13,7 @@ var results = document.getElementById('main-carousel');
 results.insertAdjacentHTML('beforeend', listItems);
 
 
-var elem = document.querySelector('.main-carousel');
+var elem = document.querySelector('#main-carousel');
 var flkty = new Flickity( elem, {
     cellAlign: 'center',
     wrapAround: true,
