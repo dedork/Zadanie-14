@@ -9,13 +9,21 @@
     <title></title>
 </head>
 <body>
-    <div class="main-carousel">
+    <div class="result" id="main-carousel">
         <div class="btn-cont">
             <button class="button button--next-wrapped">Restart</button>
         </div>
     </div>
     <div class="progress-bar"></div>
     
+    <script id="template-cell" type="x-tmpl-mustache">    
+        <div class="carrousel-cell" style="background-image:url( {{image}} )">
+            <div class="container">
+                <h1>{{title}}</h1>
+                {{{description}}}
+            </div>
+        </div>
+    </script>    
     
     <script>
         var objects = [
@@ -45,15 +53,6 @@
                 description: "<p>Lorem ipsum.Dolor sit amet.</p>"
             }
         ];    
-    </script>
-    
-    <script id="template-cell" type="x-tmpl-mustache">    
-        <div class="carrousel-cell" style="background-image:url( {{image}} )">
-            <div class="container">
-                <h1>{{title}}</h1>
-                <p>{{{description}}}</p>
-            </div>
-        </div>
     </script>
     <script src=vendor/flickity.pkgd.min.js></script>
     <script src=vendor/mustache.js></script>
