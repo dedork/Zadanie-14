@@ -1,5 +1,5 @@
 {
-  "name": "Zadanie-14",
+  "name": "zadanie-14",
   "version": "1.0.0",
   "description": "https://dedork.github.io/Zadanie-14/",
   "main": "index.js",
@@ -11,15 +11,13 @@
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "build": "npm-run-all build:*",
-    "build:clean": "rimraf css/style.css",
+    "build:clean": "rimraf css/*",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build -p watch:*",
-    "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -s build-dev:sass build:autoprefixer",
-    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.css",
-    "watch:browsersync": "browser-sync start --server --files css/*.css *.html js/*.js"
+    "watch:browser-sync": " browser-sync  start --server --files css/*.css *.html js/*.js",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -s build-dev:sass build:autoprefixer"
   },
   "repository": {
     "type": "git",
@@ -43,6 +41,7 @@
     "autoprefixer-cli": "^1.0.0",
     "flickity": "^2.2.0",
     "mkdirp": "^0.5.1",
+    "mustache": "^3.0.1",
     "normalize.css": "^8.0.1",
     "nu-html-checker": "^0.1.0",
     "rimraf": "^2.6.3",
