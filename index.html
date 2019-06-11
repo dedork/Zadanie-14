@@ -9,17 +9,16 @@
     <title></title>
 </head>
 <body>
-    <div class="results" id="main-carousel">
-        <div class="btn-cont">
-            <button class="button button--next-wrapped">Restart</button>
+        <div class="button-group">
+            <button class="button button--next-wrapped" data-selector=".cell1">Reset</button>
         </div>
-    </div>
+    <div class="results" id="main-carrousel"></div>
     <div class="progress-bar"></div>
     
     <script id="template-cell" type="x-tmpl-mustache">    
         <div class="carrousel-cell" style="background-image:url( {{image}} )">
             <div class="container">
-                <h1>{{title}}</h1>
+                <h2>{{title}}</h2>
                 {{{description}}}
             </div>
         </div>
@@ -33,12 +32,12 @@
                 description: "<p>Lorem ipsum.Dolor sit amet.</p>"
             },
             {
-                image: "https://images.pexels.com/photos/2289038/pexels-photo-2289038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                image: "https://images.pexels.com/photos/2289038/pexels-photo-2289038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                 title: "Lorem ipsum dolor sit amet",
                 description: "<p>Lorem ipsum.Dolor sit amet.</p>"
             },
             {
-                image: "https://images.pexels.com/photos/2187661/pexels-photo-2187661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                image: "https://images.pexels.com/photos/2187661/pexels-photo-2187661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                 title: "Lorem ipsum dolor sit amet",
                 description: "<p>Lorem ipsum.Dolor sit amet.</p>"
             },

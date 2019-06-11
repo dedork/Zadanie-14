@@ -1,13 +1,42 @@
-* { box-sizing: border-box; margin: 0; }
+.carrousel-cell {
+  display: block;
+  width: 100%;
+  height: 50vh;
+  min-height: 250px;
+  background-position: center;
+  background-size: cover;
+}
 
-.carousel-cell { display: block; width: 100%; height: 50vh; margin: auto; min-height: 250px; background-position: center; background-size: cover; }
+.container {
+  max-width: 1200px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 1px black;
+}
 
-.container { max-width: 1200px; text-align: center; font-size: 20px; color: white; font-weight: bold; text-shadow: 2px 1px black; }
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #E0E7D7;
+}
 
-.progress-bar { height: 20px; width: 0; background: #E0E7D7; }
+#main-carrousel {
+  height: 50vh;
+  width: 100%;
+}
 
-#main-carousel { height: 50vh; width: 100%; }
+.button {
+  font-size: 17px;
+  position: absolute;
+}
 
-.button { font-size: 17px; position: absolute; display: -ms-flexbox; display: flex; -ms-flex-pack: end; justify-content: flex-end; }
-
-.btn-cont { display: -ms-flexbox; display: flex; width: 100%; height: 20vh; -ms-flex-pack: end; justify-content: flex-end; }
+.button-group {
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+}
+/*# sourceMappingURL=style.css.map */
