@@ -39,4 +39,18 @@
   -ms-flex-pack: end;
       justify-content: flex-end;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.map-box {
+  width: 100%;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
