@@ -17,8 +17,6 @@
     hash: true
   });
  
-  var flkty = new Flickity("#main-carrousel", {});
- 
   var flkty = new Flickity("#main-carrousel");
  
   var progressBar = document.querySelector(".progress-bar");
@@ -29,10 +27,10 @@
   });
     
     var buttonGroup = document.querySelector('.button-group');
-var buttons = buttonGroup.querySelectorAll('.button');
-buttons = fizzyUIUtils.makeArray(buttons);
+    var buttons = buttonGroup.querySelectorAll('.button');
+    buttons = fizzyUIUtils.makeArray(buttons);
 
-buttonGroup.addEventListener('click', function (event) {
+    buttonGroup.addEventListener('click', function (event) {
      
     if (!matchesSelector(event.target, '.button')) {
         return;
@@ -54,57 +52,17 @@ buttonGroup.addEventListener('click', function (event) {
             center: objects[0].coords
         });
         
-        
-//        var markerOne = new google.maps.Marker({
-//            position: objects[0].coords,
-//            map: map
-//        });
-//        
-//        markerOne.addListener('click', function(){
-//            infos.innerHTML = 'You are in mountains in Canada';
-//        });
-//        
-//        var markerTwo = new google.maps.Marker({
-//			position: objects[1].coords,
-//			map: map
-//		});
-//        
-//        markerTwo.addListener('click', function(){
-//            infos.innerHTML = 'You are in Alps in Austria';
-//        });
-//        
-//        var markerThree = new google.maps.Marker({
-//			position: objects[2].coords,
-//			map: map
-//		});
-//		
-//		markerThree.addListener('click', function(){
-//			infos.innerHTML = 'You are in old town in Japan';
-//		});	
-//        
-//        var markerFour = new google.maps.Marker({
-//			position: objects[3].coords,
-//			map: map
-//		});
-//		
-//		markerThree.addListener('click', function(){
-//			infos.innerHTML = 'You are by some lake in Norway';
-//		});	 
-//        
-//        var markerFive = new google.maps.Marker({
-//			position: objects[4].coords,
-//			map: map
-//		});
-//		
-//		markerThree.addListener('click', function(){
-//			infos.innerHTML = 'You are in the pasture in Zakopane';
-//		});
-        
+
         for (var i = 0; i < objects.length; i++) {
         var markers = new google.maps.Marker({
 			position: objects[i].coords,
 			map: map
 		  });
+            
+        markers.addEventListener('click', function(){
+            
+            
+        })
         }
     }    
 })();
