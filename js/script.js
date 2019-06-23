@@ -53,7 +53,7 @@
         });
         
 
-        for (var i = 0; i < objects.length; i++) {
+        for (let i = 0; i < objects.length; i++) {
         var markers = new google.maps.Marker({
 			position: objects[i].coords,
 			map: map
@@ -61,10 +61,13 @@
             
         markers.addEventListener('click', function(){
             
-            
-        })
-        }
-    }    
+        if (!matchesSelector(event.target, markers)) {
+        return;
+    }
+//        var index = buttons.indexOf(event.target);
+        flkty.select(i);
+        });
+    })
 })();
 
 
