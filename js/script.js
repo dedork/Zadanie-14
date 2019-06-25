@@ -1,90 +1,72 @@
+'use strict';
+
+var progressBar = document.querySelector(".progress-bar");
+var templateList = document.getElementById("template-cell").innerHTML;
+var buttonGroup = document.querySelector(".button-group");
+var buttons = buttonGroup.querySelectorAll(".button");
+var infos = document.getElementById("infos");
+var marker = [];
+var results = document.getElementById("main-carrousel");
+
 (function() {
-  var templateList = document.getElementById("template-cell").innerHTML;
- 
   Mustache.parse(templateList);
- 
-  var listItems = "";
-  for (var i = 0; i < objects.length; i++) {
+    var listItems = "";
+    for (var i = 0; i < objects.length; i++) {
     listItems += Mustache.render(templateList, objects[i]);
   }
-  var results = document.getElementById("main-carrousel");
-  results.insertAdjacentHTML("beforeend", listItems);
-  var elem = document.querySelector("#main-carrousel");
-  var flkty = new Flickity(elem, {
+    
+    results.insertAdjacentHTML("beforeend", listItems);
+    var elem = document.querySelector("#main-carrousel");
+    var flkty = new Flickity(elem, {
     cellAlign: "center",
     wrapAround: true,
     contain: true,
     hash: true
   });
- 
-  var flkty = new Flickity("#main-carrousel");
- 
-  var progressBar = document.querySelector(".progress-bar");
- 
-  flkty.on("scroll", function(progress) {
+
+  flkty.on('scroll', function(progress) {
     progress = Math.max(0, Math.min(1, progress));
     progressBar.style.width = progress * 100 + "%";
   });
-    
-    var buttonGroup = document.querySelector('.button-group');
-    var buttons = buttonGroup.querySelectorAll('.button');
-    buttons = fizzyUIUtils.makeArray(buttons);
 
-    buttonGroup.addEventListener('click', function (event) {
-     
-    if (!matchesSelector(event.target, '.button')) {
-        return;
-    }
+    buttons = fizzyUIUtils.makeArray(buttons);
+    buttonGroup.addEventListener('click', function(event) {
     var index = buttons.indexOf(event.target);
     flkty.select(index);
-});
-})();
+  });
 
-//Google maps
+    var flkty = new Flickity("#main-carrousel");
 
-(function(){
-    window.initMap = function(){
-        var infos = document.getElementById('infos');
+    window.initMap = function() {
+    var map = new google.maps.Map(document.getElementById("map"), 
+    {
+    zoom: 4,
+    center: objects[0].coords
+  });
+
+    for (let i = 0; i < objects.length; i++) {
+    marker[i] = new google.maps.Marker({
+      position: objects[i].coords,
+      map: map
+        });
         
-        var map = new google.maps.Map(document.getElementById('map'), 
+    marker[i].addListener("click", function() {
+      flkty.select(i);
+    });
+        
+    flkty.on('change', function (index){
+        map.panTo(objects[i].coords);
+        map.setZoom(5),
         {
-            zoom: 4,
-            center: objects[0].coords
-        });
+        center: objects[i].coords,
+        }
+    });     
         
+};
 
-        for (let i = 0; i < objects.length; i++) {
-        var markers = new google.maps.Marker({
-			position: objects[i].coords,
-			map: map
-		  });
-            
-        markers.addEventListener('click', function(){
-            
-        if (!matchesSelector(event.target, markers)) {
-        return;
-    }
-//        var index = buttons.indexOf(event.target);
-        flkty.select(i);
-        });
-    })
+}
+
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
