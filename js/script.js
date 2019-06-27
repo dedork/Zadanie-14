@@ -53,17 +53,16 @@ var results = document.getElementById("main-carrousel");
         
         marker[i].addListener("click", function() {
             flkty.select(i);
-        });
-        
-        flkty.on('change', function (index){
-            map.panTo(objects[i].coords);
-            map.setZoom(5),
-            {
-            center: objects[i].coords,
-            }
         });     
         
     };
+    flkty.on('change', function (index){
+        map.panTo(objects[index].coords);
+        map.setZoom(5),
+        {
+        center: objects[index].coords,
+        }
+    });
 
 }
 
